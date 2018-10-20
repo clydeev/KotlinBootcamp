@@ -40,9 +40,7 @@ class Book(val title: String, val author: String, val year: Int = 0, var pages: 
 }
 
 fun Book.weight(): Double = pages * 1.5
-fun Book.tornPages(num: Int) {
-    pages -= num
-}
+fun Book.tornPages(num: Int) = if (num > pages) pages = 0 else pages -= num
 
 class Puppy() {
     fun playWithBook(book: Book) {
