@@ -1,4 +1,4 @@
-package com.clydeev.kotlin.lesson5.Buildings
+package com.clydeev.kotlin.lesson5.buildings
 
 fun main(args: Array<String>) {
     val woodBuilding = Building(Wood())
@@ -11,7 +11,7 @@ class Wood:BaseBuildingMaterial(4)
 
 class Brick:BaseBuildingMaterial(8)
 
-class Building<T: BaseBuildingMaterial>(private val buildingMaterial: T) {
+class Building<out T: BaseBuildingMaterial>(private val buildingMaterial: T) {
     var baseMaterialsNeeded: Int = 100
     private var actualMaterialsNeeded: Int = buildingMaterial.numberNeeded * baseMaterialsNeeded
 
